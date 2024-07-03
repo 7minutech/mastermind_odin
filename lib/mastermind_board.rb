@@ -1,5 +1,5 @@
 # defines the master mind board object
-class MasterMindBoard
+class MastermindBoard
   def initialize
     
   end
