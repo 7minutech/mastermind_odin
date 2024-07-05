@@ -28,4 +28,3 @@ class MastermindBoard
     peg_board[row] = peg_arr
   end
 end
-
