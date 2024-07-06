@@ -12,6 +12,7 @@ class MastermindGame
     @peg_row = []
     @round = 0
     @game_over = false
+    @player_won = false
   end
 
   private
@@ -54,8 +55,16 @@ class MastermindGame
   end
 
   def game_over?
-    game_over true if human_player.player_guess == computer_guess.computer_guess
-    game_over true if rounds > 11
+    if human_player.player_guess == computer_guess.computer_guess
+      self.game_over = true
+      self.player_won = true
+    end
+    if rounds < 11
+      self.game_over = true
+      self.player_won = false
+    end
+  end
+
   end
 
   def play_round; end
