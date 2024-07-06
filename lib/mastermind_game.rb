@@ -24,6 +24,7 @@ class MastermindGame
 
   def display_board
     board.display_board
+    puts computer_player.computer_guess
   end
 
   def computer_guess
