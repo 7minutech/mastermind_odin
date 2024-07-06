@@ -46,8 +46,8 @@ class MastermindGame
         peg_row.push(" ")
       end
     end
+    peg_row.shuffle!
   end
-  
 
   def update_board
     board.fill_peg_row(round, peg_row)
