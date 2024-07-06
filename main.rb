@@ -1,5 +1,4 @@
-require "./lib/computer_player"
-require "./lib/human_player"
-require "./lib/master_mind_board"
-require "./lib/master_mind_game"
+require_relative "lib/mastermind_game"
 
+game = MastermindGame.new
+game.play_game
