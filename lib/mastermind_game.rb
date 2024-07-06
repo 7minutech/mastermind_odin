@@ -75,10 +75,22 @@ class MastermindGame
     self.round += 1
   end
 
+  def restart?
+    puts "do you want to play again? (y/n)"
+    input = gets.chomp.downcase
+    if input == "y"
+      play_game
+    else 
+      puts "Exiting game..."
+    end
+  end
+
   def play_game
     computer_guess
     display_board
     play_round while game_over == false
+    restart?
+
   end
 end
 
