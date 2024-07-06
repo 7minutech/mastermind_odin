@@ -17,6 +17,10 @@ class MastermindGame
 
   public
 
+  def computer_guess
+    computer_player.set_computer_guess
+  end
+
   def player_guess
     human_player.valid_guess
   end
