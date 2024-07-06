@@ -5,9 +5,6 @@ require_relative "mastermind_board"
 # includes a human and computer player 
 # and a board
 class MastermindGame
-  BLACK_PEG = 2
-  WHITE_PEG = 1
-  BLANK_PEG = 0
   def initialize
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
@@ -18,7 +15,7 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row,
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row
 
   public
 
@@ -40,16 +37,19 @@ class MastermindGame
     human_player.player_guess.each do |color|
       if computer_player.computer_guess.include?(color) &&
          computer_player.computer_guess.index(color) == human_player.player_guess.index(color)
-        peg_row.push(BLACK_PEG)
+        peg_row.push("b")
       elsif computer_player.computer_guess.include?(color)
-        peg_row.push(WHITE_PEG)
+        peg_row.push("w")
       else
-        peg_row.push(BLANK_PEG)
+        peg_row.push(" ")
       end
     end
+    peg_row.shuffle!
   end
 
-  def update_board; end
+  def update_board
+    board.fill_peg_row(round, peg_row)
+  end
 
   def play_round; end
 
@@ -60,6 +60,7 @@ game1 = MastermindGame.new
 game1.player_guess
 game1.computer_guess
 game1.create_peg_row
+game1.update_board
 game1.display_board
 
 
