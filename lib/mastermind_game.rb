@@ -5,6 +5,9 @@ require_relative "mastermind_board"
 # includes a human and computer player 
 # and a board
 class MastermindGame
+  BLACK_PEG = 2
+  WHITE_PEG = 1
+  BLANK_PEG = 0
   def initialize
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
@@ -19,7 +22,8 @@ class MastermindGame
 
   public
 
-  def create_peg_row
+  def display_board
+    board.display_board
   end
 
   def computer_guess
@@ -30,8 +34,17 @@ class MastermindGame
     human_player.valid_guess
   end
 
-  def display_board
-    board.display_board
+  def create_peg_row
+    human_player.player_guess.each do |color|
+      if computer_player.computer_guess.include?(color) &&
+         computer_player.computer_guess.index(color) == human_player.player_guess.index(color)
+        peg_row.push(BLACK_PEG)
+      elsif computer_player.computer_guess.include?(color)
+        peg_row.push(WHITE_PEG)
+      else
+        peg_row.push(BLANK_PEG)
+      end
+    end
   end
 
   def update_board; end
