@@ -24,7 +24,8 @@ class MastermindGame
 
   def display_board
     board.display_board
-    puts computer_player.computer_guess
+    computer_player.computer_guess.each { |color| print "#{color} "}
+    print "\n"
   end
 
   def computer_guess
@@ -56,5 +57,7 @@ class MastermindGame
 end
 
 game1 = MastermindGame.new
+game1.computer_guess
+game1.display_board
 
 
