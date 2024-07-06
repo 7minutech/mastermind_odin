@@ -16,7 +16,7 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over
 
   public
 
