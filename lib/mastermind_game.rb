@@ -17,7 +17,7 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won
 
   public
 
@@ -71,10 +71,17 @@ class MastermindGame
     update_board
   end
 
-  def play_game; end
+  def play_game
+    computer_guess
+    display_board
+    play_round unless game_over == true
+    if player_won == true
+      puts "You won!"
+    else
+      puts "You lost!"
+    end
+  end
 end
 
 game1 = MastermindGame.new
 game1.play_game
-
-
