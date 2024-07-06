@@ -79,6 +79,7 @@ class MastermindGame
     puts "do you want to play again? (y/n)"
     input = gets.chomp.downcase
     if input == "y"
+      board.wipe_board
       play_game
     else 
       puts "Exiting game..."
