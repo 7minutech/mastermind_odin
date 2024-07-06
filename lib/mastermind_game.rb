@@ -65,16 +65,16 @@ class MastermindGame
     end
   end
 
-  def play_round; end
+  def play_round
+    player_guess
+    create_peg_row
+    update_board
+  end
 
   def play_game; end
 end
 
 game1 = MastermindGame.new
-game1.player_guess
-game1.computer_guess
-game1.create_peg_row
-game1.update_board
-game1.display_board
+game1.play_game
 
 
