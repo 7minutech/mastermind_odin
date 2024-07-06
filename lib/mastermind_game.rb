@@ -82,5 +82,4 @@ class MastermindGame
   end
 end
 
-game1 = MastermindGame.new
-game1.play_game
+
