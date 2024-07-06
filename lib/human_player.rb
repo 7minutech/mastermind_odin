@@ -26,7 +26,7 @@ class HumanPlayer
     player_guess.each do |color|
       unless VALID_INPUTS.include?(color)
         puts "Please enter a valid input"
-        false
+        return false
       end
     end
   end
