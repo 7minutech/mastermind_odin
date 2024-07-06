@@ -17,10 +17,17 @@ class MastermindGame
 
   public
 
+  def display_board
+    board.display_board
+  end
+
+  def update_board; end
+
   def play_round; end
 
   def play_game; end
 end
 
 game1 = MastermindGame.new
+game1.display_board
 
