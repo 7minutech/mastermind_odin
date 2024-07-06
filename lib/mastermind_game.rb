@@ -70,6 +70,7 @@ class MastermindGame
     player_guess
     create_peg_row
     update_board
+    self.round += 1
   end
 
   def play_game
