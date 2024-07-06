@@ -53,6 +53,10 @@ class MastermindGame
     board.fill_player_row(round, human_player.player_guess)
   end
 
+  def game_over?
+    game_over true if human_player.player_guess == computer_guess.computer_guess
+  end
+
   def play_round; end
 
   def play_game; end
