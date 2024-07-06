@@ -60,9 +60,11 @@ class MastermindGame
     if human_player.player_guess == computer_player.computer_guess
       self.game_over = true
       self.player_won = true
+      puts "You won!"
     end
-    if round > 11
+    if round == 11
       self.game_over = true
+      puts "You lost!"
     end
   end
 
@@ -78,7 +80,6 @@ class MastermindGame
     computer_guess
     display_board
     play_round while game_over == false
-
   end
 end
 
