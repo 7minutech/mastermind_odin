@@ -36,7 +36,7 @@ class MastermindGame
   end
 
   def create_peg_row
-    peg_row.clear!
+    peg_row.clear
     human_player.player_guess.each do |color|
       if computer_player.computer_guess.include?(color) &&
          computer_player.computer_guess.index(color) == human_player.player_guess.index(color)
