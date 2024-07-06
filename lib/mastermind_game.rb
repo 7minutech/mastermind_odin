@@ -19,6 +19,9 @@ class MastermindGame
 
   public
 
+  def create_peg_row
+  end
+
   def computer_guess
     computer_player.set_computer_guess
   end
