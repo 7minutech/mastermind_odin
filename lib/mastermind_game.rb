@@ -63,7 +63,6 @@ class MastermindGame
     end
     if rounds > 11
       self.game_over = true
-      self.player_won = false
     end
   end
 
@@ -71,13 +70,15 @@ class MastermindGame
     player_guess
     create_peg_row
     update_board
+    game_over?
     self.round += 1
   end
 
   def play_game
     computer_guess
     display_board
-    play_round unless game_over == true
+    play_round while game_over == false
+
   end
 end
 
