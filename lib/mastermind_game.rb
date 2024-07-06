@@ -23,8 +23,6 @@ class MastermindGame
 
   def display_board
     board.display_board
-    computer_player.computer_guess.each { |color| print "#{color} " }
-    print "\n"
   end
 
   def computer_guess
@@ -60,8 +58,7 @@ class MastermindGame
       self.game_over = true
       self.player_won = true
       puts "You won!"
-    end
-    if round == 11
+    elsif round == 11
       self.game_over = true
       puts "You lost!"
     end
