@@ -55,6 +55,7 @@ class MastermindGame
 
   def game_over?
     game_over true if human_player.player_guess == computer_guess.computer_guess
+    game_over true if rounds > 11
   end
 
   def play_round; end
