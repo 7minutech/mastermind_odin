@@ -80,6 +80,8 @@ class MastermindGame
     input = gets.chomp.downcase
     if input == "y"
       board.wipe_board
+      self.game_over = false
+      self.player_won = false
       play_game
     else 
       puts "Exiting game..."
