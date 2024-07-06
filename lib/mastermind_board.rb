@@ -20,11 +20,11 @@ class MastermindBoard
     end
   end
 
-  def fill_player_row(row,color_arr)
-    board[row] = color_arr
+  def fill_player_row(row, color_arr)
+    board[row] = color_arr.dup
   end
 
   def fill_peg_row(row, peg_arr)
-    peg_board[row] = peg_arr
+    peg_board[row] = peg_arr.dup
   end
 end
