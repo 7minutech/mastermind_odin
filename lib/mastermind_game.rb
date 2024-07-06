@@ -59,7 +59,7 @@ class MastermindGame
       self.game_over = true
       self.player_won = true
     end
-    if rounds < 11
+    if rounds > 11
       self.game_over = true
       self.player_won = false
     end
