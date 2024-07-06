@@ -9,6 +9,9 @@ class MastermindGame
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
     @board = MastermindBoard.new
+    @guess_row = []
+    @peg_row = []
+    @round = 0
   end
 
   private
@@ -37,6 +40,5 @@ class MastermindGame
 end
 
 game1 = MastermindGame.new
-game1.display_board
-game1.player_guess
+
 
