@@ -18,13 +18,13 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row,
 
   public
 
   def display_board
     board.display_board
-    computer_player.computer_guess.each { |color| print "#{color} "}
+    computer_player.computer_guess.each { |color| print "#{color} " }
     print "\n"
   end
 
@@ -57,7 +57,9 @@ class MastermindGame
 end
 
 game1 = MastermindGame.new
+game1.player_guess
 game1.computer_guess
+game1.create_peg_row
 game1.display_board
 
 
