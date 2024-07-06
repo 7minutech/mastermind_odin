@@ -65,8 +65,6 @@ class MastermindGame
     end
   end
 
-  end
-
   def play_round; end
 
   def play_game; end
