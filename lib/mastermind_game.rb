@@ -17,6 +17,10 @@ class MastermindGame
 
   public
 
+  def player_guess
+    human_player.valid_guess
+  end
+
   def display_board
     board.display_board
   end
@@ -30,4 +34,5 @@ end
 
 game1 = MastermindGame.new
 game1.display_board
+game1.player_guess
 
