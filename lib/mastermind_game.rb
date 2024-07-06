@@ -53,6 +53,7 @@ class MastermindGame
   def update_board
     board.fill_peg_row(round, peg_row)
     board.fill_player_row(round, human_player.player_guess)
+    display_board
   end
 
   def game_over?
@@ -77,11 +78,6 @@ class MastermindGame
     computer_guess
     display_board
     play_round unless game_over == true
-    if player_won == true
-      puts "You won!"
-    else
-      puts "You lost!"
-    end
   end
 end
 
