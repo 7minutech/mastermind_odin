@@ -63,6 +63,9 @@ class MastermindGame
       puts "You won!"
     elsif round == 11
       self.game_over = true
+      puts "--------"
+      computer_player.computer_guess.each { |color| print "#{color} " }
+      print "\n"
       puts "You lost!"
     end
   end
