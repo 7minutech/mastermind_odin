@@ -57,6 +57,9 @@ class MastermindGame
     if human_player.player_guess == computer_player.computer_guess
       self.game_over = true
       self.player_won = true
+      puts "--------"
+      computer_player.computer_guess.each { |color| print "#{color} " }
+      print "\n"
       puts "You won!"
     elsif round == 11
       self.game_over = true
