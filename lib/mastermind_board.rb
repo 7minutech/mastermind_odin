@@ -27,4 +27,10 @@ class MastermindBoard
   def fill_peg_row(row, peg_arr)
     peg_board[row] = peg_arr.dup
   end
+
+  def wipe_board
+    @board = Array.new(12) { Array.new(4) { "O" } }
+    @board_divider = Array.new(12) { Array.new(1) { "|" } }
+    @peg_board = Array.new(12) { Array.new(4) { " " } }
+  end
 end
