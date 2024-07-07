@@ -27,6 +27,7 @@ class ComputerPlayer
   def set_score
     "+#{prev_peg_row.count('b')}-#{prev_peg_row.count('w')}"
   end
+
   def update_computer_guess(peg_row)
     self.prev_peg_row = peg_row
     self.score = set_score
@@ -36,7 +37,6 @@ class ComputerPlayer
     if prev_peg_row.empty?
       pool_of_solutions.sample(1)
     end
-
   end
 
 
