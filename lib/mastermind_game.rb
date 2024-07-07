@@ -55,7 +55,7 @@ class MastermindGame
     peg_row.shuffle!
   end
 
-  def set_code 
+  def set_code
     self.code = if mode == "g"
                   player_guess
                 else
@@ -123,6 +123,7 @@ class MastermindGame
   def play_game
     choose_mode while valid_mode? == false
     display_board
+    set_code
     play_round while game_over == false
     restart?
   end
