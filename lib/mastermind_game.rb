@@ -19,8 +19,6 @@ class MastermindGame
 
   attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won
 
-  public
-
   def display_board
     board.display_board
   end
@@ -51,6 +49,12 @@ class MastermindGame
     board.fill_peg_row(round, peg_row)
     board.fill_player_row(round, human_player.player_guess)
     display_board
+  end
+
+  def game_over_message
+    puts "--------"
+    computer_player.computer_guess.each { |color| print "#{color} " }
+    print "\n"
   end
 
   def game_over?
@@ -91,6 +95,8 @@ class MastermindGame
       puts "Exiting game..."
     end
   end
+
+  public
 
   def play_game
     computer_guess
