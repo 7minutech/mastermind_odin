@@ -99,7 +99,7 @@ class MastermindGame
     guess(player)
     create_peg_row
     update_board
-    game_over?
+    game_over?(player)
     self.round += 1
   end
 
