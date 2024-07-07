@@ -46,7 +46,7 @@ class MastermindGame
     if player.is_a?(HumanPlayer)
       player.valid_guess
     else
-      player.computer_guess(peg_row)
+      player.set_computer_guess(peg_row)
     end
   end
 
