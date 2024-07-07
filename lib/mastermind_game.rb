@@ -87,11 +87,14 @@ class MastermindGame
     if player.guess == code
       self.game_over = true
       game_over_message
-      puts "You won!"
+      puts player
     elsif round == 11
       self.game_over = true
       game_over_message
-      puts "You lost!"
+      if mode == "g"
+        puts "You lost!"
+      else
+        puts "You win!"
     end
   end
 
