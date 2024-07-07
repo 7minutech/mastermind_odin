@@ -81,7 +81,10 @@ class MastermindGame
   end
 
   def play_round
-    player_guess
+    if mode == "g"
+      player_guess
+    else
+      computer_guess
     create_peg_row
     update_board
     game_over?
@@ -105,11 +108,11 @@ class MastermindGame
       puts "Exiting game..."
     end
   end
+
   public
 
   def play_game
     choose_mode while valid_mode? == false
-    computer_guess
     display_board
     play_round while game_over == false
     restart?
