@@ -8,6 +8,7 @@ class MastermindGame
   def initialize
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
+    @current_player = ""
     @code = []
     @board = MastermindBoard.new
     @peg_row = []
