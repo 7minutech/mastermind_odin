@@ -15,12 +15,10 @@ class ComputerPlayer
 
   attr_reader :computer_guess
 
-  def set_computer_guess
+  def set_computer_code
     self.computer_guess = VALID_INPUTS.sample(4)
   end
 
-  def computer_guess
-  end
 
   def to_s
     "Computer won"
