@@ -14,13 +14,12 @@ class MastermindGame
     @peg_row = []
     @round = 0
     @game_over = false
-    @player_won = false
     @mode = ""
   end
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won, :mode, :current_player
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :mode, :current_player
 
   def display_board
     board.display_board
@@ -84,10 +83,9 @@ class MastermindGame
     print "\n"
   end
 
-  def game_over?
-    if human_player.player_guess == computer_player.computer_guess
+  def game_over?(player)
+    if player.guess == code
       self.game_over = true
-      self.player_won = true
       game_over_message
       puts "You won!"
     elsif round == 11
