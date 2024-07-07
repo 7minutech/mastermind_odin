@@ -34,7 +34,7 @@ class MastermindGame
     mode == "c" || mode == "g"
   end
 
-  def computer_guess
+  def computer_guess_code
     computer_player.set_computer_guess
   end
 
@@ -59,7 +59,7 @@ class MastermindGame
     self.code = if mode == "g"
                   player_guess
                 else
-                  computer_guess
+                  computer_guess_code
                 end
   end
 
