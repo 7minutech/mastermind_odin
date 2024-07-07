@@ -39,6 +39,7 @@ class MastermindGame
       player.valid_guess
     else
       player.computer_guess
+    end
   end
 
   def create_peg_row
@@ -87,12 +88,8 @@ class MastermindGame
     end
   end
 
-  def play_round
-    if mode == "g"
-      player_guess
-    else
-      computer_guess
-    end
+  def play_round(player)
+    guess(player)
     create_peg_row
     update_board
     game_over?
@@ -123,7 +120,10 @@ class MastermindGame
     choose_mode while valid_mode? == false
     display_board
     set_code
-    play_round while game_over == false
+    if mode == "g"
+      play_round(human_player) while game_over == false
+    else
+      play_round(computer_player) while game_over == false
     restart?
   end
 end
