@@ -69,8 +69,9 @@ class MastermindGame
                 else
                   computer_player.set_computer_code
                 end
-                if current_player.is_a?(ComputerPlayer)
-                  computer_player.give_code(code)
+    if current_player.is_a?(ComputerPlayer)
+      computer_player.give_code(code)
+    end
   end
 
   def update_board(player)
