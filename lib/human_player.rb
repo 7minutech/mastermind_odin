@@ -35,4 +35,8 @@ class HumanPlayer
     ask_player_guess
     ask_player_guess until valid_input?
   end
+
+  def to_s
+    "You won"
+  end
 end

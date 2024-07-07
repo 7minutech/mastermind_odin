@@ -21,4 +21,8 @@ class ComputerPlayer
 
   def computer_guess
   end
+
+  def to_s
+    "Computer won"
+  end
 end
