@@ -127,12 +127,10 @@ class MastermindGame
 
   def play_game
     choose_mode while valid_mode? == false
+    choose_current_player
     display_board
     set_code
-    if mode == "g"
-      play_round(human_player) while game_over == false
-    else
-      play_round(computer_player) while game_over == false
+    play_round(current_player) while game_over == false
     restart?
   end
 end
