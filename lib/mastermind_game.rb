@@ -8,11 +8,13 @@ class MastermindGame
   def initialize
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
+    @code = []
     @board = MastermindBoard.new
     @peg_row = []
     @round = 0
     @game_over = false
     @player_won = false
+    @mode = ""
   end
 
   private
@@ -21,6 +23,15 @@ class MastermindGame
 
   def display_board
     board.display_board
+  end
+
+  def choose_mode
+    puts "Do you want a creator or guessor (c or g)"
+    self.mode = gets.chomp.downcase
+  end
+
+  def valid_mode?
+    mode == "c" || mode == "g"
   end
 
   def computer_guess
@@ -94,7 +105,6 @@ class MastermindGame
       puts "Exiting game..."
     end
   end
-
   public
 
   def play_game
