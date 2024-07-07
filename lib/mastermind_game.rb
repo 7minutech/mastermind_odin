@@ -104,6 +104,7 @@ class MastermindGame
   end
 
   def restart
+    choose_mode
     board.wipe_board
     self.game_over = false
     self.player_won = false
