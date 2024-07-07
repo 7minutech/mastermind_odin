@@ -108,6 +108,7 @@ class MastermindGame
   public
 
   def play_game
+    choose_mode while valid_mode? == false
     computer_guess
     display_board
     play_round while game_over == false
