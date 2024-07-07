@@ -7,6 +7,7 @@ class ComputerPlayer
   def initialize
     @computer_guess
     @pool_of_solutions = (1111..6666).to_a
+    @pool_of_color_solutions = []
     @prev_peg_row = []
     @score = ""
     @code =  []
@@ -27,6 +28,11 @@ class ComputerPlayer
 
   def set_score(peg_row)
     "+#{prev_peg_row.count('b')}-#{prev_peg_row.count('w')}"
+  end
+
+  def transform_solutions
+    pool_of_color_solutions = pool_of_solutions.map do |number|
+
   end
 
   def update_computer_guess(peg_row)
@@ -50,13 +56,12 @@ class ComputerPlayer
   end
 
   def set_computer_guess
-    if prev_peg_row.empty?
-      pool_of_solutions.sample(1)
-    else
+    unless prev_peg_row.empty?
       update_computer_guess
       check_solutions
       pool_of_solutions.sample(1)
     end
+    pool_of_solutions.sample(1)
   end
 
   def give_code(code)
