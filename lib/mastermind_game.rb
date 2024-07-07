@@ -5,7 +5,6 @@ require_relative "mastermind_board"
 # includes a human and computer player
 # and a board
 class MastermindGame
-  include create_peg_row
   def initialize
     @human_player = HumanPlayer.new
     @computer_player = ComputerPlayer.new
