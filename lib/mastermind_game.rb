@@ -46,7 +46,7 @@ class MastermindGame
     if player.is_a?(HumanPlayer)
       player.valid_guess
     else
-      player.computer_guess
+      player.computer_guess(peg_row)
     end
   end
 
@@ -95,6 +95,7 @@ class MastermindGame
         puts "You lost!"
       else
         puts "You win!"
+      end
     end
   end
 
