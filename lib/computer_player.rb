@@ -19,4 +19,3 @@ class ComputerPlayer
     self.computer_guess = VALID_INPUTS.sample(4)
   end
 end
-
