@@ -9,6 +9,7 @@ class ComputerPlayer
     @pool_of_solutions = (1111..6666).to_a
     @prev_peg_row = []
     @score = ""
+    @code =  []
   end
 
   private
@@ -24,21 +25,43 @@ class ComputerPlayer
     self.computer_guess = VALID_INPUTS.sample(4)
   end
 
-  def set_score
+  def set_score(peg_row)
     "+#{prev_peg_row.count('b')}-#{prev_peg_row.count('w')}"
   end
 
   def update_computer_guess(peg_row)
     self.prev_peg_row = peg_row
-    self.score = set_score
+    self.score = set_score(prev_peg_row)
+  end
+
+  def check_solutions
+    pool_of_solutions.each do |solution|
+      peg_row = solution.each_with_index.map do |color, index|
+        if code[index] == color
+          "b"
+        elsif code.include?(color)
+          "w"
+        else
+          " "
+        end
+      end
+      pool_of_solutions.delete(solution) if set_score(peg_row) == score
+    end
   end
 
   def set_computer_guess
     if prev_peg_row.empty?
       pool_of_solutions.sample(1)
+    else
+      update_computer_guess
+      check_solutions
+      pool_of_solutions.sample(1)
     end
   end
 
+  def give_code(code)
+    self.code = code
+  end
 
   def to_s
     "Computer won"
