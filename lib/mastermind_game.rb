@@ -65,9 +65,9 @@ class MastermindGame
 
   def set_code
     self.code = if mode == "g"
-                  player_guess
+                  guess(human_player)
                 else
-                  computer_guess_code
+                  computer_player.set_computer_code
                 end
   end
 
