@@ -19,6 +19,9 @@ class ComputerPlayer
     self.computer_guess = VALID_INPUTS.sample(4)
   end
 
+  def computer_guess(prev_peg_row)
+  end
+
 
   def to_s
     "Computer won"
