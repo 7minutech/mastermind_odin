@@ -78,6 +78,14 @@ class MastermindGame
     self.round += 1
   end
 
+  def restart
+    board.wipe_board
+    self.game_over = false
+    self.player_won = false
+    self.round = 0
+    play_game
+  end
+
   def restart?
     puts "do you want to play again? (y/n)"
     input = gets.chomp.downcase
