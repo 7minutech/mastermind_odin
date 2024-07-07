@@ -104,7 +104,7 @@ class MastermindGame
 
   def play_round(player)
     guess(player)
-    create_peg_row
+    create_peg_row(player)
     update_board
     game_over?(player)
     self.round += 1
