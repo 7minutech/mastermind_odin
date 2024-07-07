@@ -35,6 +35,14 @@ class MastermindGame
     mode == "c" || mode == "g"
   end
 
+  def choose_current_player
+    if mode == "g"
+      self.current_player = human_player
+    else
+      self.current_player = computer_player
+    end
+  end
+
   def guess(player)
     if player.is_a?(HumanPlayer)
       player.valid_guess
