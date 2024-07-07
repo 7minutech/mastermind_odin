@@ -30,11 +30,6 @@ class ComputerPlayer
     "+#{prev_peg_row.count('b')}-#{prev_peg_row.count('w')}"
   end
 
-  def transform_solutions
-    pool_of_color_solutions = pool_of_solutions.map do |number|
-
-  end
-
   def update_computer_guess(peg_row)
     self.prev_peg_row = peg_row
     self.score = set_score(prev_peg_row)
