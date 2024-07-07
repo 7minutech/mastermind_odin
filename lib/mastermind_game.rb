@@ -34,12 +34,11 @@ class MastermindGame
     mode == "c" || mode == "g"
   end
 
-  def computer_guess_code
-    computer_player.set_computer_guess
-  end
-
-  def player_guess
-    human_player.valid_guess
+  def guess(player)
+    if player.is_a?(HumanPlayer)
+      player.valid_guess
+    else
+      player.computer_guess
   end
 
   def create_peg_row

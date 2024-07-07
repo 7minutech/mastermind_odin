@@ -18,4 +18,7 @@ class ComputerPlayer
   def set_computer_guess
     self.computer_guess = VALID_INPUTS.sample(4)
   end
+
+  def computer_guess
+  end
 end
