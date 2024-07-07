@@ -91,7 +91,7 @@ class MastermindGame
     input = gets.chomp.downcase
     if input == "y"
       restart
-    else 
+    else
       puts "Exiting game..."
     end
   end
@@ -103,8 +103,5 @@ class MastermindGame
     display_board
     play_round while game_over == false
     restart?
-
   end
 end
-
-
