@@ -55,6 +55,14 @@ class MastermindGame
     peg_row.shuffle!
   end
 
+  def set_code 
+    self.code = if mode == "g"
+                  player_guess
+                else
+                  computer_guess
+                end
+  end
+
   def update_board
     board.fill_peg_row(round, peg_row)
     board.fill_player_row(round, human_player.player_guess)
@@ -85,6 +93,7 @@ class MastermindGame
       player_guess
     else
       computer_guess
+    end
     create_peg_row
     update_board
     game_over?
