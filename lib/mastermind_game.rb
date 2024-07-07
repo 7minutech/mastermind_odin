@@ -19,7 +19,7 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :mode, :current_player
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :mode, :current_player, :code
 
   def display_board
     board.display_board
@@ -64,7 +64,7 @@ class MastermindGame
   end
 
   def set_code
-    self.mode = if mode == "g"
+    self.code = if mode == "g"
                   guess(human_player)
                 else
                   computer_player.set_computer_code
