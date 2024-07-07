@@ -32,14 +32,13 @@ class MastermindGame
   end
 
   def create_peg_row
-    peg_row.clear
-    human_player.player_guess.each_with_index do |color, index|
+    self.peg_row = human_player.player_guess.each_with_index.map do |color, index|
       if computer_player.computer_guess[index] == color
-        peg_row.push("b")
+        "b"
       elsif computer_player.computer_guess.include?(color)
-        peg_row.push("w")
+        "w"
       else
-        peg_row.push(" ")
+        " "
       end
     end
     peg_row.shuffle!
