@@ -5,7 +5,6 @@ require 'pry-byebug'
 class ComputerPlayer
   VALID_INPUTS = %w[r o y g b p].freeze
   MAX_COLORS = 4
-  MAX_SOLUTIONS = (1111..6666).freeze
   MAX_RANGE_COLOR = (1..6).freeze
 
   def initialize
@@ -29,7 +28,6 @@ class ComputerPlayer
   end
 
   def set_possible_solutions
-
     MAX_RANGE_COLOR.each do |i|
       MAX_RANGE_COLOR.each do |j|
         MAX_RANGE_COLOR.each do |k|
