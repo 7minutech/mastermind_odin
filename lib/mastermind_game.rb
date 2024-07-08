@@ -113,7 +113,6 @@ class MastermindGame
   def restart
     board.wipe_board
     self.game_over = false
-    self.player_won = false
     self.round = 0
     play_game
   end
