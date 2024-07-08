@@ -18,7 +18,7 @@ class MastermindGame
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won, :code, :mode
 
   def display_board
     board.display_board
