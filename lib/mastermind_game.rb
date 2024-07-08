@@ -12,7 +12,6 @@ class MastermindGame
     @peg_row = []
     @round = 0
     @game_over = false
-    @player_won = false
   end
 
   private
