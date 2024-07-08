@@ -80,7 +80,7 @@ class MastermindGame
 
   def update_board
     board.fill_peg_row(round, peg_row)
-    board.fill_player_row(round, human_player.player_guess)
+    board.fill_player_row(round, guess)
     display_board
   end
 
