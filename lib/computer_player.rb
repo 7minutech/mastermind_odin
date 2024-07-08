@@ -113,7 +113,7 @@ class ComputerPlayer
 
   def reset
     set_possible_solutions
-    peg.clear
+    peg_row.clear
   end
 
   def print_details
