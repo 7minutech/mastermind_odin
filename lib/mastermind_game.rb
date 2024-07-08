@@ -78,7 +78,7 @@ class MastermindGame
   end
 
   def game_over?
-    if human_player.player_guess == computer_player.computer_guess
+    if human_player.player_guess == code
       self.game_over = true
       self.player_won = true
       game_over_message
