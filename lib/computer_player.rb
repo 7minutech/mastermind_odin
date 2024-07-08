@@ -30,6 +30,13 @@ class ComputerPlayer
     end
   end
 
+  def smart_computer_guess
+    if peg_row.empty?
+      self.computer_guess = possible_solutions.sample
+    else
+    end
+  end
+
   def set_possible_solutions
     MAX_RANGE_COLOR.each do |i|
       MAX_RANGE_COLOR.each do |j|
