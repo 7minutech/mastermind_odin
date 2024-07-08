@@ -33,7 +33,7 @@ class ComputerPlayer
   def smart_computer_guess
     if peg_row.empty?
       self.computer_guess = possible_solutions.sample
-      create_peg_row
+      create_peg_row(computer_guess)
     else
       set_score
     end
@@ -63,6 +63,10 @@ class ComputerPlayer
       end
     end
     peg_row.shuffle!
+  end
+
+  def get_score 
+    "+#{peg_row.count('b')}-#{peg_row.count('w')}"
   end
 
   def set_score
