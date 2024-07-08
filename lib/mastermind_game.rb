@@ -91,7 +91,7 @@ class MastermindGame
   end
 
   def game_over?
-    if human_player.player_guess == code
+    if guess == code
       self.game_over = true
       game_over_message
       puts "You won!"
