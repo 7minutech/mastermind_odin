@@ -11,6 +11,7 @@ class ComputerPlayer
     @computer_guess = Array.new(4)
     @possible_solutions = []
     set_possible_solutions
+    @code = ""
   end
 
   private
@@ -61,9 +62,11 @@ class ComputerPlayer
     end
   end
 
+  def set_code
+  end
+
   def print_details
     puts(possible_solutions.map(&:join))
   end
 end
 npc = ComputerPlayer.new
-npc.print_details
