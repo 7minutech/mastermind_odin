@@ -16,11 +16,11 @@ class ComputerPlayer
 
   private
 
-  attr_writer :computer_guess
+  attr_writer :computer_guess, :code
 
   public
 
-  attr_reader :computer_guess, :possible_solutions
+  attr_reader :computer_guess, :possible_solutions, :code
 
   def set_computer_guess
     MAX_COLORS.times do |i|
@@ -62,11 +62,13 @@ class ComputerPlayer
     end
   end
 
-  def set_code
+  def set_code(code)
+    self.code = code
   end
 
   def print_details
     puts(possible_solutions.map(&:join))
+    puts code
   end
 end
 npc = ComputerPlayer.new
