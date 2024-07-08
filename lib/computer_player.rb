@@ -4,6 +4,7 @@ require 'pry-byebug'
 # the master mind game
 class ComputerPlayer
   VALID_INPUTS = %w[r o y g b p].freeze
+  MAX_COLORS = 4
 
   def initialize
     @computer_guess = Array.new(4)
@@ -18,7 +19,7 @@ class ComputerPlayer
   attr_reader :computer_guess
 
   def set_computer_guess
-    4.times do |i|
+    MAX_COLORS.times do |i|
       self.computer_guess[i] = VALID_INPUTS.sample
     end
     binding.pry
