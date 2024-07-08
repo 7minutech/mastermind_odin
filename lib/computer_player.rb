@@ -37,7 +37,6 @@ class ComputerPlayer
     else
       set_score
       remove_solutions
-      print_details
       self.computer_guess = possible_solutions.sample
     end
   end
