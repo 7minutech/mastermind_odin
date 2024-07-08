@@ -32,6 +32,13 @@ class MastermindGame
     human_player.valid_guess
   end
 
+  def set_code
+    if game_mode == "g"
+      self.code = computer_guess
+    else
+      self.code = player_guess
+  end
+
   def valid_mode?
     game_mode == "g" || game_mode == "c"
   end
@@ -113,7 +120,6 @@ class MastermindGame
 
   def play_game
     choose_mode
-    computer_guess
     display_board
     play_round while game_over == false
     restart?
