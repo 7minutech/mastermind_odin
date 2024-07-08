@@ -18,11 +18,11 @@ class ComputerPlayer
 
   private
 
-  attr_writer :computer_guess, :code, :score
+  attr_writer :computer_guess, :code, :score, :peg_row
 
   public
 
-  attr_reader :computer_guess, :possible_solutions, :code, :score
+  attr_reader :computer_guess, :possible_solutions, :code, :score, :peg_row
 
   def set_computer_guess
     MAX_COLORS.times do |i|
@@ -31,7 +31,7 @@ class ComputerPlayer
   end
 
   def smart_computer_guess
-    if peg_row.empty?
+    if self.peg_row.empty?
       self.computer_guess = possible_solutions.sample
       create_peg_row(computer_guess)
     else
