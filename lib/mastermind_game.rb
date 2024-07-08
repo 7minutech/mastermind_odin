@@ -31,19 +31,17 @@ class MastermindGame
   def player_guess
     human_player.valid_guess
   end
-  
+
   def valid_mode?
     mode == "g" || mode == "c"
   end
 
-
   def choose_mode
     puts "Do you want play as a guesser or creator (g or c)?: "
-    input = gets.chomp.downcase
-    if input == "g"
-      self.mode = "g"
-    else
-      mode == "c"
+    self.mode = gets.chomp.downcase
+    unless valid_mode?
+      puts "Please enter a valid mode"
+      self.mode = gets.chomp.downcase
     end
   end
 
