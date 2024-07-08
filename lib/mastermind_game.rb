@@ -13,6 +13,7 @@ class MastermindGame
     @round = 0
     @game_over = false
     @code = []
+    @mode = ""
   end
 
   private
