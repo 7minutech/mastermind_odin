@@ -6,11 +6,12 @@ class ComputerPlayer
   VALID_INPUTS = %w[r o y g b p].freeze
   MAX_COLORS = 4
   MAX_SOLUTIONS = (1111..6666).freeze
+  MAX_RANGE_COLOR = (1..6).freeze
 
   def initialize
     @computer_guess = Array.new(4)
     @possible_solutions = []
-    set_possible_solutions
+    v2_set_possible_solutions
   end
 
   private
@@ -27,12 +28,21 @@ class ComputerPlayer
     end
   end
 
+  
+
   def set_possible_solutions
-    MAX_SOLUTIONS.each do |num|
-      possible_solutions.push(num.to_s.chars)
+
+    MAX_RANGE_COLOR.each do |i|
+      MAX_RANGE_COLOR.each do |j|
+        MAX_RANGE_COLOR.each do |k|
+          MAX_RANGE_COLOR.each do |l|
+            possible_solutions.push("#{i}#{j}#{k}#{l}".chars)
+          end
+        end
+      end
     end
-    transform_solutions
   end
+
   def transform_solutions
     possible_solutions.each do |solution|
       solution.map! do |number|
@@ -51,9 +61,11 @@ class ComputerPlayer
           "p"
         end
       end
+    end
   end
+
   def print_details
-    p possible_solutions
+    puts(possible_solutions.map(&:join))
   end
 end
 npc = ComputerPlayer.new
