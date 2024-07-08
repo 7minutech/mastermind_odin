@@ -1,6 +1,7 @@
 require_relative "human_player"
 require_relative "computer_player"
 require_relative "mastermind_board"
+require 'pry-byebug'
 # defines the master mind game
 # includes a human and computer player
 # and a board
@@ -49,6 +50,7 @@ class MastermindGame
                   computer_guess
                 else
                   player_guess
+                  human_player.player_guess
                 end
   end
 
