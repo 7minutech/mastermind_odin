@@ -13,6 +13,7 @@ class ComputerPlayer
     set_possible_solutions
     @code = ""
     @score = ""
+    @peg_row = []
   end
 
   private
