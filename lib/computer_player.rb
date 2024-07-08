@@ -6,7 +6,7 @@ class ComputerPlayer
   VALID_INPUTS = %w[r o y g b p].freeze
 
   def initialize
-    @computer_guess
+    @computer_guess = Array.new(4)
   end
 
   private
@@ -18,6 +18,9 @@ class ComputerPlayer
   attr_reader :computer_guess
 
   def set_computer_guess
-    self.computer_guess = VALID_INPUTS.sample(4)
+    4.times do |i|
+      self.computer_guess[i] = VALID_INPUTS.sample
+    end
+    binding.pry
   end
 end
