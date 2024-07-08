@@ -8,7 +8,7 @@ class ComputerPlayer
 
   def initialize
     @computer_guess = Array.new(4)
-    @possible_solutions = (1111..6666).to_a
+    @possible_solutions = (1111..6666).to_s
   end
 
   private
@@ -17,11 +17,14 @@ class ComputerPlayer
 
   public
 
-  attr_reader :computer_guess
+  attr_reader :computer_guess, :possible_solutions
 
   def set_computer_guess
     MAX_COLORS.times do |i|
       computer_guess[i] = VALID_INPUTS.sample
     end
   end
+  binding.pry
 end
+
+npc = ComputerPlayer.new
