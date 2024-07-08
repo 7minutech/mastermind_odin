@@ -11,7 +11,7 @@ class ComputerPlayer
   def initialize
     @computer_guess = Array.new(4)
     @possible_solutions = []
-    v2_set_possible_solutions
+    set_possible_solutions
   end
 
   private
@@ -28,8 +28,6 @@ class ComputerPlayer
     end
   end
 
-  
-
   def set_possible_solutions
 
     MAX_RANGE_COLOR.each do |i|
@@ -41,6 +39,7 @@ class ComputerPlayer
         end
       end
     end
+    transform_solutions
   end
 
   def transform_solutions
