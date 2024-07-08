@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 # defines a computer player for
 # the master mind game
 class ComputerPlayer
