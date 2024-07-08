@@ -33,10 +33,11 @@ class MastermindGame
   end
 
   def set_code
-    if game_mode == "g"
-      self.code = computer_guess
-    else
-      self.code = player_guess
+    self.code = if game_mode == "g"
+                  computer_guess
+                else
+                  player_guess
+                end
   end
 
   def valid_mode?
