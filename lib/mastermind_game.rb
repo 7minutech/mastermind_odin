@@ -54,6 +54,7 @@ class MastermindGame
                 else
                   player_guess
                   human_player.player_guess
+                  computer_player.set_code(code)
                 end
   end
 
