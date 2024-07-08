@@ -37,6 +37,7 @@ class ComputerPlayer
     else
       set_score
       remove_solutions
+      print_details
       self.computer_guess = possible_solutions.sample
     end
   end
@@ -110,9 +111,14 @@ class ComputerPlayer
     end
   end
 
+  def reset_computer
+    set_possible_solutions
+    self.peg.clear
+  end
+
   def print_details
-    puts(possible_solutions.map(&:join))
-    puts code
+    #puts(possible_solutions.map(&:join))
+    puts possible_solutions.length
   end
 end
 npc = ComputerPlayer.new
