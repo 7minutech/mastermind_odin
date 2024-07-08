@@ -98,6 +98,16 @@ class ComputerPlayer
     self.code = code
   end
 
+  def remove_solutions
+    possible_solutions.each do |solution|
+      create_peg_row(solution)
+      current_score = get_score
+      if score == current_score
+        possible_solutions.delete(solution)
+      end
+    end
+  end
+
   def print_details
     puts(possible_solutions.map(&:join))
     puts code
