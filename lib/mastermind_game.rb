@@ -43,7 +43,7 @@ class MastermindGame
     else
       computer_player.set_computer_guess
       self.guess = computer_player.computer_guess
-      sleep(5)
+      sleep(3)
     end
   end
 
