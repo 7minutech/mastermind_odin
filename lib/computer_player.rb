@@ -20,8 +20,7 @@ class ComputerPlayer
 
   def set_computer_guess
     MAX_COLORS.times do |i|
-      self.computer_guess[i] = VALID_INPUTS.sample
+      computer_guess[i] = VALID_INPUTS.sample
     end
-    binding.pry
   end
 end
