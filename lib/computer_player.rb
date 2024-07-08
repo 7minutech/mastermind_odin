@@ -17,11 +17,11 @@ class ComputerPlayer
 
   private
 
-  attr_writer :computer_guess, :code
+  attr_writer :computer_guess, :code, :score
 
   public
 
-  attr_reader :computer_guess, :possible_solutions, :code
+  attr_reader :computer_guess, :possible_solutions, :code, :score
 
   def set_computer_guess
     MAX_COLORS.times do |i|
