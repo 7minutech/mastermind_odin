@@ -122,6 +122,7 @@ class MastermindGame
     board.wipe_board
     self.game_over = false
     self.round = 0
+    computer_player.reset
     play_game
   end
 
