@@ -5,10 +5,11 @@ require 'pry-byebug'
 class ComputerPlayer
   VALID_INPUTS = %w[r o y g b p].freeze
   MAX_COLORS = 4
+  MAX_SOLUTIONS = (1111..6666).freeze
 
   def initialize
     @computer_guess = Array.new(4)
-    @possible_solutions = (1111..6666).to_s
+    @possible_solutions = []
   end
 
   private
@@ -24,7 +25,5 @@ class ComputerPlayer
       computer_guess[i] = VALID_INPUTS.sample
     end
   end
-  binding.pry
 end
 
-npc = ComputerPlayer.new
