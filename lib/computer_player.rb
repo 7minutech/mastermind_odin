@@ -29,8 +29,12 @@ class ComputerPlayer
 
   def set_possible_solutions
     MAX_SOLUTIONS.each do |num|
-      possible_solutions.push(num.to_s)
+      possible_solutions.push(num.to_s.chars)
     end
   end
+  def print_details
+    p possible_solutions
+  end
 end
-
+npc = ComputerPlayer.new
+npc.print_details
