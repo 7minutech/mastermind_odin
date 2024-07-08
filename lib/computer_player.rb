@@ -111,9 +111,9 @@ class ComputerPlayer
     end
   end
 
-  def reset_computer
+  def reset
     set_possible_solutions
-    self.peg.clear
+    peg.clear
   end
 
   def print_details
