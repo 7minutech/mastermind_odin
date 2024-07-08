@@ -16,13 +16,12 @@ class MastermindGame
     @code = []
     @game_mode = ""
     @guess = []
-    @hard_mode = false
   end
 
   private
 
   attr_accessor :human_player, :computer_player, :board, :round,
-                :peg_row, :game_over, :player_won, :code, :game_mode, :guess, :hard_mode
+                :peg_row, :game_over, :player_won, :code, :game_mode, :guess
 
   def display_board
     board.display_board
@@ -42,7 +41,7 @@ class MastermindGame
       human_player.valid_guess
       self.guess = human_player.player_guess
     else
-      computer_player.set_computer_guess
+      computer_player.smart_computer_guess
       self.guess = computer_player.computer_guess
       sleep(3)
     end
@@ -65,12 +64,6 @@ class MastermindGame
     game_mode == "g" || game_mode == "c"
   end
 
-  def hard_mode?
-    puts "Do you want play hard mode (y or n)?: "
-    if gets.chomp.downcase == "y"
-      self.hard_mode = true
-    end
-  end
   def choose_mode
     puts "Do you want play as a guesser or creator (g or c)?: "
     self.game_mode = gets.chomp.downcase
