@@ -64,6 +64,10 @@ class ComputerPlayer
     peg_row.shuffle!
   end
 
+  def set_score
+    self.score = "+#{peg_row.count('b')}-#{peg_row.count('w')}"
+  end
+
   def transform_solutions
     possible_solutions.each do |solution|
       solution.map! do |number|
