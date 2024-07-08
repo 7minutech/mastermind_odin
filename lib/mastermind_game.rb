@@ -32,6 +32,14 @@ class MastermindGame
     human_player.valid_guess
   end
 
+  def guess
+    if game_mode == "g"
+      human_player.player_guess
+    else
+      computer_player.computer_guess
+    end
+  end
+
   def set_code
     self.code = if game_mode == "g"
                   computer_guess
