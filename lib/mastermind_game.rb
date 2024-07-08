@@ -92,7 +92,11 @@ class MastermindGame
   end
 
   def play_round
-    player_guess
+    if game_mode == "g"
+      player_guess
+    else
+      computer_guess
+    end
     create_peg_row
     update_board
     game_over?
