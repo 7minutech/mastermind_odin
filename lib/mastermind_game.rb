@@ -13,12 +13,12 @@ class MastermindGame
     @round = 0
     @game_over = false
     @code = []
-    @mode = ""
+    @game_mode = ""
   end
 
   private
 
-  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won, :code, :mode
+  attr_accessor :human_player, :computer_player, :board, :round, :peg_row, :game_over, :player_won, :code, :game_mode
 
   def display_board
     board.display_board
@@ -33,15 +33,15 @@ class MastermindGame
   end
 
   def valid_mode?
-    mode == "g" || mode == "c"
+    game_mode == "g" || game_mode == "c"
   end
 
   def choose_mode
     puts "Do you want play as a guesser or creator (g or c)?: "
-    self.mode = gets.chomp.downcase
+    self.game_mode = gets.chomp.downcase
     unless valid_mode?
-      puts "Please enter a valid mode"
-      self.mode = gets.chomp.downcase
+      puts "Please enter a valid game mode"
+      self.game_mode = gets.chomp.downcase
     end
   end
 
