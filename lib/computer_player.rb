@@ -33,6 +33,7 @@ class ComputerPlayer
   def smart_computer_guess
     if peg_row.empty?
       self.computer_guess = possible_solutions.sample
+      create_peg_row
     else
     end
   end
