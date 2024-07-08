@@ -52,8 +52,8 @@ class ComputerPlayer
     transform_solutions
   end
 
-  def create_peg_row
-    self.peg_row = computer_guess.each_with_index.map do |color, index|
+  def create_peg_row(guess)
+    self.peg_row = guess.each_with_index.map do |color, index|
       if code[index] == color
         "b"
       elsif code.include?(color)
