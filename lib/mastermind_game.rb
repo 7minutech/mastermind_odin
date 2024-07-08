@@ -89,7 +89,6 @@ class MastermindGame
   def game_over?
     if human_player.player_guess == code
       self.game_over = true
-      self.player_won = true
       game_over_message
       puts "You won!"
     elsif round == 11
