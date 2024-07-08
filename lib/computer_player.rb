@@ -12,6 +12,7 @@ class ComputerPlayer
     @possible_solutions = []
     set_possible_solutions
     @code = ""
+    @score = ""
   end
 
   private
