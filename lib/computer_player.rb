@@ -8,7 +8,7 @@ class ComputerPlayer
 
   def initialize
     @computer_guess = Array.new(4)
-    @possible_solutions = []
+    @possible_solutions = (1111..6666).to_a
   end
 
   private
