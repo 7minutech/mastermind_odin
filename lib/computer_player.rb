@@ -50,6 +50,19 @@ class ComputerPlayer
     transform_solutions
   end
 
+  def create_peg_row
+    self.peg_row = computer_guess.each_with_index.map do |color, index|
+      if code[index] == color
+        "b"
+      elsif code.include?(color)
+        "w"
+      else
+        " "
+      end
+    end
+    peg_row.shuffle!
+  end
+
   def transform_solutions
     possible_solutions.each do |solution|
       solution.map! do |number|
