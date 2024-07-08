@@ -116,3 +116,4 @@ class ComputerPlayer
   end
 end
 npc = ComputerPlayer.new
+npc.smart_computer_guess

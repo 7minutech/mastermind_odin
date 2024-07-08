@@ -16,12 +16,13 @@ class MastermindGame
     @code = []
     @game_mode = ""
     @guess = []
+    @hard_mode = false
   end
 
   private
 
   attr_accessor :human_player, :computer_player, :board, :round,
-                :peg_row, :game_over, :player_won, :code, :game_mode, :guess
+                :peg_row, :game_over, :player_won, :code, :game_mode, :guess, :hard_mode
 
   def display_board
     board.display_board
