@@ -25,6 +25,7 @@ class MastermindGame
 
   def display_board
     board.display_board
+    print("\n")
   end
 
   def computer_guess
