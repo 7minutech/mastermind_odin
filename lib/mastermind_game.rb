@@ -86,7 +86,7 @@ class MastermindGame
 
   def game_over_message
     puts "--------"
-    computer_player.computer_guess.each { |color| print "#{color} " }
+    code.each { |color| print "#{color} " }
     print "\n"
   end
 
