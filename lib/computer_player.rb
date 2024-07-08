@@ -35,6 +35,7 @@ class ComputerPlayer
       self.computer_guess = possible_solutions.sample
       create_peg_row
     else
+      set_score
     end
   end
 
