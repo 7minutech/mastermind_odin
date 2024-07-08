@@ -33,12 +33,12 @@ class MastermindGame
   end
 
   def choose_mode
-    puts "Do you want to a guesser or creator (g or c)?: "
+    puts "Do you want play as a guesser or creator (g or c)?: "
     input = gets.chomp.downcase
     if input == "g"
       self.mode = "g"
     else
-      self.mode == "c"
+      mode == "c"
     end
   end
 
