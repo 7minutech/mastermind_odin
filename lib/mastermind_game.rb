@@ -120,6 +120,7 @@ class MastermindGame
 
   def play_game
     choose_mode
+    set_code
     display_board
     play_round while game_over == false
     restart?
