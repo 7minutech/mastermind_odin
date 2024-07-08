@@ -65,6 +65,12 @@ class MastermindGame
     game_mode == "g" || game_mode == "c"
   end
 
+  def hard_mode?
+    puts "Do you want play hard mode (y or n)?: "
+    if gets.chomp.downcase == "y"
+      self.hard_mode = true
+    end
+  end
   def choose_mode
     puts "Do you want play as a guesser or creator (g or c)?: "
     self.game_mode = gets.chomp.downcase
