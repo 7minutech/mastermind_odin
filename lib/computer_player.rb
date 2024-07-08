@@ -10,6 +10,7 @@ class ComputerPlayer
   def initialize
     @computer_guess = Array.new(4)
     @possible_solutions = []
+    set_possible_solutions
   end
 
   private
@@ -23,6 +24,12 @@ class ComputerPlayer
   def set_computer_guess
     MAX_COLORS.times do |i|
       computer_guess[i] = VALID_INPUTS.sample
+    end
+  end
+
+  def set_possible_solutions
+    MAX_SOLUTIONS.each do |num|
+      possible_solutions.push(num.to_s)
     end
   end
 end
