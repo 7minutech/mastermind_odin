@@ -63,9 +63,9 @@ class MastermindGame
 
   def create_peg_row
     self.peg_row = human_player.player_guess.each_with_index.map do |color, index|
-      if computer_player.computer_guess[index] == color
+      if code[index] == color
         "b"
-      elsif computer_player.computer_guess.include?(color)
+      elsif code.include?(color)
         "w"
       else
         " "
