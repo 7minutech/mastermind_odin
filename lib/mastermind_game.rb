@@ -32,6 +32,16 @@ class MastermindGame
     human_player.valid_guess
   end
 
+  def choose_mode
+    puts "Do you want to a guesser or creator (g or c)?: "
+    input = gets.chomp.downcase
+    if input == "g"
+      self.mode = "g"
+    else
+      self.mode == "c"
+    end
+  end
+
   def create_peg_row
     self.peg_row = human_player.player_guess.each_with_index.map do |color, index|
       if computer_player.computer_guess[index] == color
