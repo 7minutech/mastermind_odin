@@ -34,7 +34,7 @@ class MastermindGame
     human_player.valid_guess
   end
 
-  def guess
+  def set_guess
     if game_mode == "g"
       human_player.valid_guess
     else
@@ -101,7 +101,7 @@ class MastermindGame
   end
 
   def play_round
-    guess
+    set_guess
     create_peg_row
     update_board
     game_over?
