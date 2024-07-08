@@ -14,6 +14,7 @@ class MastermindGame
     @game_over = false
     @code = []
     @game_mode = ""
+    @guess = ""
   end
 
   private
