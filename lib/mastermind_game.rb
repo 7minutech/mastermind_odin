@@ -31,6 +31,11 @@ class MastermindGame
   def player_guess
     human_player.valid_guess
   end
+  
+  def valid_mode?
+    mode == "g" || mode == "c"
+  end
+
 
   def choose_mode
     puts "Do you want play as a guesser or creator (g or c)?: "
